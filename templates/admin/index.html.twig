@@ -1,0 +1,69 @@
+{% extends 'admin/base.html.twig' %}
+
+{% block title %}Hello AdminController!{% endblock %}
+{% import 'components/icon.html.twig' as icon %}
+
+{% block body %}
+    <h1>Administration</h1>
+    <hr>
+
+    <div class="my4">
+        <h2 class="h3">Mes stats</h2>
+        <div class="justify-content-between">
+            <a href="{{ path('admin.image.index') }}" class="card-admin w20 text-primary">
+                <div class="card-body-admin text-primary" >
+                    <i>{{ icon.image() }}</i>
+                    <p>{{ images | length }}</p>
+                </div>
+                Nombre d'image
+            </a>
+            <a href="{{ path('admin.video.index') }}" class="card-admin w20 text-danger">
+                <div class="card-body-admin">
+                    <i>{{ icon.video() }}</i>
+                    <p>{{ videos | length}}</p>
+                </div>
+                Nombre de Vidéo
+            </a>
+            <div class="card-admin w20 text-success">
+                <div class="card-body-admin">
+                    <i>{{ icon.message() }}</i>
+                    <p>{{ messagesall | length}}</p>
+                </div>
+                Nombre de messages
+            </div>
+            <a href="{{ path('admin.news.index') }}" class="card-admin w20 text-warning">
+                <div class="card-body-admin">
+                    <i>{{ icon.new() }}</i>
+                    <p>{{ news | length}}</p>
+                </div>
+                Nombre de News
+            </a>
+        </div>
+    </div>
+
+    <div>
+        <h2 class="h3">Mes 3 nouveau messages</h2>
+        {% if messages|length > 0 %}
+            {% for message in  messages %}
+                <div class="card">
+                    <div class="card-body">
+                        <h3 class="card-title">De: {{ message.firstname }}</h3>
+                        <p>Email: {{ message.email }}</p>
+                        <div class="mt1">
+                            <p>Message:</p>
+                            <p>{{ message.descrition | nl2br }}</p>
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <button class="btn-primary">Répondre</button>
+                        <p>Envoyer le: {{ message.createdAt | date('d M Y') }}</p>
+                    </div>
+                </div>
+            {% endfor %}
+        {% else %}
+            <div class="card">
+                <p>vous n'avez pas de messages</p>
+            </div>
+        {% endif %}
+    </div>
+{% endblock %}

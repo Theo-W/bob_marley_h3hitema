@@ -1,0 +1,32 @@
+%container, .container {
+  width: calc(100% - 35%);
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.container-nav {
+  @extend %container;
+  margin-top: 1em;
+}
+
+body{
+  font-family: "Gill Sans", sans-serif;
+  font-size: 16px;
+  color: var(--black);
+  background-color: var(--gray);
+}
+
+.ck-editor {
+  margin-top: 8px !important;
+}
+
+.ck-heading_heading1 {
+  @extend %h;
+  font-size: 52px;
+}
+
+@media (max-width: $breakpoint-tablet) {
+  %container {
+    width: 100%;
+  }
+}

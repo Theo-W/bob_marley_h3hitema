@@ -1,0 +1,27 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Images{% endblock %}
+
+{% block body %}
+    <h1 class="h2 t-center my2">Images Bob Marley</h1>
+
+    <div class="image galerie">
+        {% for image in images %}
+            <div class="image_content card">
+                <a href="/upload/{{ image.image }}">
+                    <img src="/upload/{{ image.image }}" alt="" width="225" height="auto">
+                </a>
+                <p>{{ image.name }}</p>
+            </div>
+        {% endfor %}
+    </div>
+
+    <!-- modal-->
+    <div id="modal-image" class="modal-image">
+        <span class="close">&times;</span>
+        <div class="modal-content-image">
+            <img src="" alt="">
+        </div>
+    </div>
+{% endblock %}
+

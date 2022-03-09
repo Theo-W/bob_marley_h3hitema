@@ -1,0 +1,55 @@
+{% extends 'admin/base.html.twig' %}
+
+{% block title %}Admin Images{% endblock %}
+{% import 'components/icon.html.twig' as icon %}
+
+{% block body %}
+    <div class="justify-content-between align-item-center mt3">
+        <h1 class="h1">Mes Images</h1>
+        <a href="{{ path('admin.image.new') }}" class="btn-primary">
+            <i class="icon">{{ icon.plus() }}</i>
+            Ajouter une image
+        </a>
+    </div>
+
+    <table class="table">
+        <thead class="thead">
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Créer Le:</th>
+            <th></th>
+        </tr>
+        </thead>
+
+        <tbody class="tbody">
+        {% if images|length > 0 %}
+            {% for image in images %}
+                <tr>
+                    <td>{{ image.id }}</td>
+                    <td>{{ image.name }}</td>
+                    <td>{{ image.createdAt | date('d M Y') }}</td>
+                    <td>
+                        <a href="{{ path('admin.image.edit', {'id': image.id}) }}" class="btn-primary"> <i class="icon">{{ icon.edit() }}</i> Edit</a>
+                        <form method="post" action="{{ path('admin.image.delete', {'id': image.id}) }}"
+                              style="display: inline-block" onsubmit="return confirm('Etes vous vraiment sur ?')">
+                            <input type="hidden" name="_method" value="DELETE">
+                            <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ image.id) }}">
+                            <button class="btn-danger"> <i class="icon">{{ icon.delete() }}</i>Supprimer</button>
+                        </form>
+                    </td>
+                </tr>
+            {% endfor %}
+        {% else %}
+            <th colspan="6">
+                <p class="p3">Il n'y a pas d'image</p>
+            </th>
+        {% endif %}
+        </tbody>
+    </table>
+
+    <div>
+        {% do images.setPageRange(2) %}
+        {{ knp_pagination_render(images, 'components/pagination.html.twig') }}
+    </div>
+{% endblock %}

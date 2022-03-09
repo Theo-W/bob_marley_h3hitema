@@ -1,0 +1,27 @@
+nav {
+  display: flex;
+  justify-content: space-between;
+  ul {
+    display: flex;
+    flex-direction: row;
+
+    li {
+      padding: 16px;
+
+      a {
+        color: var(--black);
+        padding: 8px;
+
+        &:hover {
+          color: var(--primary);
+          transition: .3ms;
+        }
+      }
+    }
+  }
+}
+
+.nav_active {
+  color: var(--primary);
+  transition: .3ms;
+}

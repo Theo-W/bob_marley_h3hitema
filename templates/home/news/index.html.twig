@@ -1,0 +1,22 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello HomeController!{% endblock %}
+
+{% block body %}
+<h1 class="h1">News</h1>
+
+    <div>
+        {% for new in news %}
+            <div class="card">
+                <div class="card-body">
+                    <h2 class="card-title">{{ new.title }}</h2>
+                    <p>{{ new.description | raw }}</p>
+                </div>
+                <div class="card-footer">
+                    <a href="{{ path('news.show', {'id': new.id }) }}" class="btn-primary">Voir</a>
+                    {{ new.createdAt | date('m/d/Y') }}
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}

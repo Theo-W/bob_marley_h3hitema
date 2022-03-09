@@ -1,0 +1,32 @@
+.table {
+  border-collapse: collapse;
+  width: 100%;
+  margin: 16px 0;
+}
+
+.tbody {
+  tr {
+    border-bottom: 1px solid var(--border);
+  }
+
+  td {
+    padding: 8px 16px;
+    @extend %t;
+  }
+}
+
+.thead {
+  border-bottom: 1px solid var(--border);
+
+  th {
+    padding: 16px;
+    @extend %t;
+  }
+}
+
+%t {
+  text-align: left;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1;
+}

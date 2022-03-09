@@ -1,0 +1,40 @@
+.alert {
+  width: 100%;
+  height: auto;
+  padding: 1em;
+  border-radius: 5px;
+
+  &.alert-success{
+    background-color: #d1e7dd;
+    color: #306a4f;
+  }
+
+  &.alert-danger{
+    background-color: #f8d7da;
+    color: #963d45;
+  }
+
+  &.alert-warning{
+    background-color: #fff3cd;
+    color: #755e18;
+  }
+
+  &.alert-info{
+    background-color: #cff4fc;
+    color: #1e6573;
+  }
+}
+
+.closebtn {
+  margin-left: 24px;
+  color: var(--gray);
+  float: right;
+  font-size: 26px;
+  line-height: 20px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.closebtn:hover {
+  color: black;
+}

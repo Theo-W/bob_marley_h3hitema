@@ -1,0 +1,9 @@
+{% extends 'admin/base.html.twig' %}
+
+{% block title %}Hello AdminController!{% endblock %}
+
+{% block body %}
+    <h1 class="h1 mb3">Modifier la news {{ news.title }}</h1>
+
+    {% include 'admin/news/_form.html.twig' %}
+{% endblock %}

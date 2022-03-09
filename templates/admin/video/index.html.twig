@@ -1,0 +1,53 @@
+{% extends 'admin/base.html.twig' %}
+
+{% block title %}Admin Vidéo{% endblock %}
+{% import 'components/icon.html.twig' as icon %}
+
+{% block body %}
+    <div class="justify-content-between align-item-center mt3">
+        <h1 class="h1">Mes Vidéos</h1>
+        <a href="{{ path('admin.video.new') }}" class="btn-primary">
+            <i class="icon">{{ icon.plus() }}</i>
+            Ajouter une Vidéo
+        </a>
+    </div>
+
+    <table class="table">
+        <thead class="thead">
+        <tr>
+            <th>id</th>
+            <th>Name</th>
+            <th>Créer Le:</th>
+            <th></th>
+        </tr>
+        </thead>
+
+        <tbody class="tbody">
+        {% if videos|length > 0 %}
+            {% for video in videos %}
+                <tr>
+                    <td>{{ video.id }}</td>
+                    <td>{{ video.name }}</td>
+                    <td>{{ video.createdAt | date('d M Y') }}</td>
+                    <td>
+                        <a href="{{ path('admin.video.edit', {'id': video.id}) }}" class="btn-primary"><i class="icon">{{ icon.edit() }}</i>Edit</a>
+                        <form method="post" action="{{ path('admin.video.delete', {'id': video.id}) }}" style="display: inline-block" onsubmit="return confirm('Etes vous vraiment sur ?')">
+                            <input type="hidden" name="_method" value="DELETE">
+                            <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ video.id) }}">
+                            <button class="btn-danger"><i class="icon">{{ icon.delete() }}</i>Supprimer</button>
+                        </form>
+                    </td>
+                </tr>
+            {% endfor %}
+        {% else %}
+            <th colspan="6">
+                <p class="p3">Il n'y a pas de Vidéo</p>
+            </th>
+        {% endif %}
+        </tbody>
+    </table>
+
+    <div>
+        {{ knp_pagination_render(videos) }}
+    </div>
+{% endblock %}

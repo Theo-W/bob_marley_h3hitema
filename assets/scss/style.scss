@@ -1,0 +1,48 @@
+// Variables
+// ==================
+:root {
+  --space: 8px;
+  --primary: #17aac2;
+  --secondary: #92cdf8;;
+  --write: #f9f9f9;
+  --black: #000000;
+  --danger: #ff4141;
+  --gray: #f7f7f7;
+  --dark-blue: #0a3162;
+  --background: #083d69;
+  --border: #ced4da;
+  --border-input: #b8b8b8;
+  --background-pagination: #d1d1d1;
+  --warning: #fbbc24;
+  --success: #5bb59b;
+}
+
+$breakpoint-laptop: 1281px;
+$breakpoint-small-laptop: 1024px;
+$breakpoint-small-screen: 961px;
+$breakpoint-tablet: 769px;
+$breakpoint-phone: 769px;
+
+// import modules
+@import "modules/nav";
+@import "modules/form";
+@import "modules/btn";
+@import "modules/table";
+@import "modules/typo";
+@import "modules/flex";
+@import "modules/card";
+@import "modules/timeline";
+@import "modules/pagination";
+@import "modules/alert";
+
+// import tools
+@import "tools/fontion";
+@import "tools/reset";
+@import "tools/layout";
+@import "tools/tools";
+@import "tools/lightbox";
+@import "tools/animation";
+
+// import views
+@import "views/index";
+@import "views/image";

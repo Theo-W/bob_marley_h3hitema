@@ -1,0 +1,32 @@
+{% extends 'contact/email/_base.html.twig' %}
+ {% block body_mail %}
+     <tr>
+         <td height="30" style="font-size: 30px; line-height: 30px"> &nbsp;</td>
+     </tr>
+     <tr>
+         <td align="center"
+             style="font-family: Helvetica, sans-serif; text-align: center; font-size: 40px; mso-line-height-rule: exactly; line-height: 28px">
+             Un nouveau clien a besoin de plus d'infomation sur un bien
+         </td>
+     </tr>
+     <tr>
+         <td height="30" style="font-size: 30px; line-height: 30px"> &nbsp;</td>
+     </tr>
+     <tr>
+         <td height="30" style="font-size: 30px; line-height: 30px"> &nbsp;</td>
+     </tr>
+     <table cellpadding="0" cellspacing="0" width="100%" border="0">
+         <tr>
+             <td>Nom :</td>
+             <td>{{ contact.firstname }}</td>
+         </tr>
+         <tr>
+             <td>Email :</td>
+             <td>{{ contact.email }}</td>
+         </tr>
+         <tr>
+             <td>Message :</td>
+             <td>{{ contact.descrition }}</td>
+         </tr>
+     </table>
+ {% endblock %}

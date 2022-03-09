@@ -1,0 +1,10 @@
+<div class="table">
+    {% for label, messages in app.flashes %}
+        {% for message in messages %}
+            <div class="alert alert-{{ label }}" role="alert">
+                <span class="closebtn" data-dismiss="alert" aria-label="Close" onclick="this.parentElement.style.display='none';">&times;</span>
+                {{ message }}
+            </div>
+        {% endfor %}
+    {% endfor %}
+</div>

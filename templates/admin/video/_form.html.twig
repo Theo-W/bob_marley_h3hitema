@@ -1,0 +1,15 @@
+{{ form_start(form) }}
+    {{ form_row(form.name) }}
+    {% if  video.video != null %}
+        <div style="width: 150px; flex: none; margin: 5px">
+            <video controls width="400">
+                <source src="/upload/{{ video.video }}" type="video/webm">
+            </video>
+            <a href="{{ path('admin.video.delete.video', {'id': video.id}) }}" class="btn-danger mt2 mb2">
+                Supprimer
+            </a>
+        </div>
+    {% endif %}
+    {{ form_row(form.video) }}
+<button type="submit" class="btn-primary mt2">{{ button | default('Enregister') }}</button>
+{{ form_end(form) }}

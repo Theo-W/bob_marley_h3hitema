@@ -1,0 +1,19 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Video{% endblock %}
+
+{% block body %}
+    <h1 class="h1 t-center">Vidéo de Bob Marley</h1>
+    
+    <div class="video">
+        {% for video in videos %}
+            <div class="card video_content">
+                    <video controls>
+                        <source src="/upload/{{ video.video }}" type="video/webm">
+                    </video>
+                <p>{{ video.name }}</p>
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}
+

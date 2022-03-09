@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Welcome!{% endblock %}</title>
+    <link rel="icon" href="/img/logo.png">
+    {% block stylesheets %}
+    {% endblock %}
+
+    {% block javascripts %}
+        {{ vite_asset('main.jsx', ['react']) }}
+    {% endblock %}
+</head>
+<body>
+<nav class="container-nav">
+    <a href="{{ path('home') }}">
+        <img src="/img/logo.png" alt="" width="75" height="50">
+    </a>
+    <ul>
+        <li>
+            <a class="{% if app.request.get('_route') == 'admin.index' %} nav_active {% endif %}"
+                    href="{{ path('admin.index') }}">Dashboard
+            </a>
+        </li>
+        <li>
+            <a class="{% if app.request.get('_route') == 'admin.news.index' %} nav_active {% endif %}"
+                    href="{{ path('admin.news.index') }}">Actualité
+            </a>
+        </li>
+        <li>
+            <a class="{% if app.request.get('_route') == 'admin.video.index' %} nav_active {% endif %}"
+                    href="{{ path('admin.video.index') }}">Video
+            </a>
+        </li>
+        <li>
+            <a class="{% if app.request.get('_route') == 'admin.image.index' %} nav_active {% endif %}"
+                    href="{{ path('admin.image.index') }}">Images</a>
+        </li>
+    </ul>
+</nav>
+<main class="container mb5 mt4">
+    {{ include('components/_flash.html.twig') }}
+    {% block body %}{% endblock %}
+</main>
+</body>
+<footer>
+
+</footer>
+</html>

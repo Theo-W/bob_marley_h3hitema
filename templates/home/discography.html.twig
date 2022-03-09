@@ -1,0 +1,111 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Discography{% endblock %}
+{% import 'components/modal_song.html.twig' as modal %}
+{% import 'components/icon.html.twig' as icon %}
+
+{% block body %}
+    <h1 class="h3 t-center">Discography</h1>
+    <div class="timeline my3">
+        <div class="container-timeline left">
+            <div class="content">
+                <div class="justify-content-center discocatchAFire">
+                    <img src="/img/bob_marley13.jpg" class="my2" alt="" width="300" height="300">
+                </div>
+                <div class="t-center">
+                    <h2 class="h6">1973</h2>
+                    <p>Catch a Fire</p>
+                </div>
+            </div>
+        </div>
+        <div class="container-timeline right">
+            <div class="content">
+                <div class="justify-content-center discoburnin">
+                    <img src="/img/bob_marley12.jpg" class="my2" alt="" width="300" height="300">
+                </div>
+                <div class="t-center">
+                    <h2 class="h6">1973</h2>
+                    <p>Burnin'</p>
+                </div>
+            </div>
+        </div>
+        <div class="container-timeline left">
+            <div class="content">
+                <div class="justify-content-center disconattyFread">
+                    <img src="/img/bob_marley11.jpg" class="my2" alt="" width="300" height="300">
+                </div>
+                <div class="t-center">
+                    <h2 class="h6">1974</h2>
+                    <p>Natty Fread</p>
+                </div>
+            </div>
+        </div>
+        <div class="container-timeline right">
+            <div class="content">
+                <div class="justify-content-center discorastamanVibration">
+                    <img src="/img/bob_marley10.jpg" class="my2" alt="" width="300" height="300">
+                </div>
+                <div class="t-center">
+                    <h2 class="h6">1976</h2>
+                    <p>Rastaman Vibration</p>
+                </div>
+            </div>
+        </div>
+        <div class="container-timeline left">
+            <div class="content">
+                <div class="justify-content-center discoexodus">
+                    <img src="/img/bob_marley9.jpg" class="my2" alt="" width="300" height="300">
+                </div>
+                <div class="t-center">
+                    <h2 class="h6">1977</h2>
+                    <p>Exodus</p>
+                </div>
+            </div>
+        </div>
+        <div class="container-timeline right">
+            <div class="content">
+                <div class="justify-content-center discokaya">
+                    <img src="/img/bob_marley8.jpg" class="my2" alt="" width="300" height="300">
+                </div>
+                <div class="t-center">
+                    <h2 class="h6">1978</h2>
+                    <p>Kaya</p>
+                </div>
+            </div>
+        </div>
+        <div class="container-timeline left">
+            <div class="content">
+                <div class="justify-content-center discosurvival">
+                    <img src="/img/bob_marley7.jpg" class="my2" alt="" width="300" height="300">
+                </div>
+                <div class="t-center">
+                    <h2 class="h6">1979</h2>
+                    <p>Survival</p>
+                </div>
+            </div>
+        </div>
+        <div class="container-timeline right">
+            <div class="content">
+                <div class="justify-content-center discouprising">
+                    <img src="/img/bob_marley6.jpg" class="my2" alt="" width="300" height="300">
+                </div>
+                <div class="t-center">
+                    <h2 class="h6">1980</h2>
+                    <p>Uprising</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    {{ modal.catchAFire() }}
+    {{ modal.nattyFread() }}
+    {{ modal.burnin() }}
+    {{ modal.exodus() }}
+    {{ modal.survival() }}
+    {{ modal.rastamanVibration() }}
+    {{ modal.uprising() }}
+    {{ modal.kaya() }}
+{% endblock %}
+
+
+

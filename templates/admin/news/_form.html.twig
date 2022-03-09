@@ -1,0 +1,18 @@
+{{ form_start(form) }}
+    {{ form_row(form.title) }}
+    {{ form_row(form.source) }}
+    {% if app.request.get('_route') == "admin.news.edit" %}
+        {% if  news.image != null %}
+            <div style="width: 150px; flex: none; margin: 5px">
+                <img src="/upload/{{ news.image }}" alt="image" width="100px" height="auto">
+                <a href="{{ path('admin.news.delete.image', {'id': news.id}) }}" class="btn-danger mt2 mb2">
+                    Supprimer
+                </a>
+            </div>
+        {% endif %}
+    {% endif %}
+    {{ form_row(form.image) }}
+    {{ form_row(form.description) }}
+    {{ form_row(form.content) }}
+<button type="submit" class="btn-primary mt2">{{ button | default('Enregister') }}</button>
+{{ form_end(form) }}

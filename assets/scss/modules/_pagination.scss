@@ -1,0 +1,21 @@
+.pagination {
+  display: flex;
+  justify-content: flex-end;
+  padding: 16px;
+
+  li {
+    background-color: var(--backe);
+    color: #FFFFFF;
+    padding: 8px;
+    margin: 4px;
+    border-radius: 5px;
+  }
+
+  .is-active {
+    background-color: var(--background-pagination);
+    color: var(--black);
+    padding: 8px;
+    margin: 4px;
+    border-radius: 5px;
+  }
+}

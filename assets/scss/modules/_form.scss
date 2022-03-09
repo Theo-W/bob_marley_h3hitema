@@ -1,0 +1,53 @@
+// Label
+// ==================
+label {
+  font-weight: 300;
+  font-size: 0.85em;
+  margin-bottom: 8px;
+}
+
+input:disabled {
+  opacity: 0.7;
+}
+
+// Champs texte
+// ==================
+input,
+textarea,
+select,
+%input {
+  border: 1px solid var(--border);
+  border-radius: .25rem;
+  color: var(--color);
+  padding: .375rem .75rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  display: block;
+  width: 100%;
+  outline: none;
+  margin: 8px 0;
+}
+
+input:focus, textarea:focus, select:focus  {
+  box-shadow: 0 0 0 0.2rem rgba(23,170,194, .4);
+  border-color: var(--border);
+}
+
+textarea {
+  min-height: 150px;
+}
+
+label {
+  display: block;
+  margin-bottom: space(1);
+}
+
+select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'><path fill='none' stroke='%23121c4299' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M2 5l6 6 6-6'/></svg>");
+  background-size: 12px 12px;
+  background-position: center right 20px;
+  background-repeat: no-repeat;
+}

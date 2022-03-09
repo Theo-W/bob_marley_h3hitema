@@ -1,0 +1,21 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello HomeController!{% endblock %}
+
+{% block body %}
+
+    <div class="card">
+        <h1 class="h1 t-center">{{ news.title }}</h1>
+
+        <div>
+            <div class="justify-content-center">
+                <img src="/upload/{{ news.image }}" class="py3" alt="{{ news.image }}" width="500" height="auto">
+            </div>
+
+            <div>
+                {{ news.content | raw }}
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
