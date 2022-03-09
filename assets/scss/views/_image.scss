@@ -4,15 +4,17 @@
   flex-direction: row;
   flex-wrap: wrap;
 
-  .image_content {
-    margin: .5em 0;
+  .galerie {
     transition: .3s;
+    width: 25%;
 
-    p {
-      margin-top: 8px;
-      padding: 8px 0;
-      text-align: center;
-    }
+  }
+
+  img {
+    width: 80%;
+    height: auto;
+    border-radius: 10px;
+    margin-top: 25px;
   }
 }
 
@@ -21,6 +23,7 @@
   justify-content: space-between;
   flex-direction: row;
   flex-wrap: wrap;
+  margin-top: 25px;
 
   .video_content {
     display: flex;
@@ -28,13 +31,10 @@
     flex-direction: column;
 
     margin: .5em 0;
-    transition: .3s;
-    width: 42%;
+    width: 45%;
 
-    p {
-      margin-top: 12px;
-      padding: 8px 0;
-      text-align: center;
+    video {
+      border-radius: 5px;
     }
   }
 }

@@ -1,13 +1,14 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello HomeController!{% endblock %}
+{% block title %}News{% endblock %}
 
 {% block body %}
 
     <div class="card">
-        <h1 class="h1 t-center">{{ news.title }}</h1>
-
-        <div>
+        <div class="card-body">
+            <div class="card-title">
+                <h1 class="h1 t-center">{{ news.title }}</h1>
+            </div>
             <div class="justify-content-center">
                 <img src="/upload/{{ news.image }}" class="py3" alt="{{ news.image }}" width="500" height="auto">
             </div>
@@ -15,6 +16,10 @@
             <div>
                 {{ news.content | raw }}
             </div>
+        </div>
+
+        <div class="card-footer flex-end">
+            <a href="{{ news.source }}"><spane style="color: gray">source: </spane> {{ news.source }}</a>
         </div>
     </div>
 

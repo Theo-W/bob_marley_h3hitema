@@ -7,11 +7,10 @@
     
     <div class="video">
         {% for video in videos %}
-            <div class="card video_content">
+            <div class="video_content">
                     <video controls>
                         <source src="/upload/{{ video.video }}" type="video/webm">
                     </video>
-                <p>{{ video.name }}</p>
             </div>
         {% endfor %}
     </div>

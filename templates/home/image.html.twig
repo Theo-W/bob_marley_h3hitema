@@ -5,13 +5,12 @@
 {% block body %}
     <h1 class="h2 t-center my2">Images Bob Marley</h1>
 
-    <div class="image galerie">
+    <div class="image">
         {% for image in images %}
-            <div class="image_content card">
+            <div class="galerie">
                 <a href="/upload/{{ image.image }}">
-                    <img src="/upload/{{ image.image }}" alt="" width="225" height="auto">
+                    <img src="/upload/{{ image.image }}" alt="" height="auto">
                 </a>
-                <p>{{ image.name }}</p>
             </div>
         {% endfor %}
     </div>

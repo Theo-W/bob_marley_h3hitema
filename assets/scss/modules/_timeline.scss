@@ -1,145 +1,121 @@
+// timeline variables
+$body-bg: #1e1e2f;
+$timeline-before-bg: #222a42;
+$timeline-body-bg: #27293d;
+$timeline-body-round: 5px;
+$timeline-body-shadow: 1px 3px 9px rgba(0, 0, 0, .1);
+
+// page container
+.container-timeline {
+  max-width: 750px;
+  margin: 50px auto;
+}
+
+// timeline style
 .timeline {
   position: relative;
-  max-width: 1200px;
-  margin: 0 auto;
-}
+  padding-left: 4rem;
+  margin: 0 0 0 30px;
 
-.timeline::after {
-  content: '';
-  position: absolute;
-  width: 6px;
-  background-color: white;
-  top: 0;
-  bottom: 0;
-  left: 50%;
-  margin-left: -3px;
-}
-
-.container-timeline {
-  padding: 10px 40px;
-  position: relative;
-  background-color: inherit;
-  width: 40%;
-}
-
-.container-timeline img {
-  transition: .3s;
-  background-color: transparent;
-
-  &:hover {
-    opacity: .3;
-  }
-}
-
-/*.disco-icon {
-  z-index: 1;
-  position: relative;
-  top: 150px;
-  right: 160px;
-  cursor: pointer;
-  display: none;
-
-  svg {
-    width: 50px;
-    height: 50px;
-  }
-}*/
-
-.icon:hover {
-  z-index: 1;
-  position: relative;
-  top: 150px;
-  left: 160px;
-  cursor: pointer;
-  display: block;
-
-  svg {
-    width: 50px;
-    height: 50px;
-  }
-}
-
-.container-timeline::after {
-  content: '';
-  position: absolute;
-  width: 25px;
-  height: 25px;
-  right: -13px;
-  background-color: white;
-  border: 4px solid var(--primary);
-  top: 15px;
-  border-radius: 50%;
-  z-index: 1;
-}
-
-.left {
-  left: 3.25%;
-}
-
-.right {
-  left: 50%;
-}
-
-.left::before {
-  content: " ";
-  height: 0;
-  position: absolute;
-  top: 22px;
-  width: 0;
-  z-index: 1;
-  right: 30px;
-  border: medium solid white;
-  border-width: 10px 0 10px 10px;
-  border-color: transparent transparent transparent white;
-}
-
-.right::before {
-  content: " ";
-  height: 0;
-  position: absolute;
-  top: 22px;
-  width: 0;
-  z-index: 1;
-  left: 30px;
-  border: medium solid white;
-  border-width: 10px 10px 10px 0;
-  border-color: transparent white transparent transparent;
-}
-
-.right::after {
-  left: -16px;
-}
-
-.content {
-  padding: 20px 30px;
-  background-color: white;
-  position: relative;
-  border-radius: 6px;
-}
-
-@media screen and (max-width: 600px) {
-  .timeline::after {
-    left: 31px;
-  }
-
-  .container-timeline {
-    width: 100%;
-    padding-left: 70px;
-    padding-right: 25px;
-  }
-
-  .container-timeline::before {
-    left: 60px;
-    border: medium solid white;
-    border-width: 10px 10px 10px 0;
-    border-color: transparent white transparent transparent;
-  }
-
-  .left::after, .right::after {
-    left: 15px;
-  }
-
-  .right {
+  &:before {
+    content: '';
+    position: absolute;
     left: 0;
+    top: 0;
+    width: 4px;
+    height: 100%;
+    background: var(--border);
+  }
+
+  .timeline-container {
+    position: relative;
+    margin-bottom: 2.5rem;
+
+    .timeline-icon {
+      position: absolute;
+      left: -82px;
+      top: 4px;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      text-align: center;
+      font-size: 2rem;
+      background: var(--primary);
+
+      i {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+      }
+
+      img {
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+      }
+    }
+
+    .timeline-content {
+      display: flex;
+      width: 100%;
+      flex-direction: row;
+      justify-content: space-between;
+      background: #FFFFFF;
+      border-radius: $timeline-body-round;
+      padding: 25px;
+      box-shadow: $timeline-body-shadow;
+      transition: .3s;
+
+      &:before {
+        content: '';
+        background: inherit;
+        width: 20px;
+        height: 20px;
+        display: block;
+        position: absolute;
+        left: -10px;
+        transform: rotate(45deg);
+        border-radius: 0 0 0 2px;
+      }
+
+      .timeline-img {
+        z-index: 0;
+
+        &:hover {
+          display: block;
+
+          .iconPlayTimeline {
+            display: block;
+          }
+        }
+      }
+
+      .iconPlayTimeline {
+        display: none;
+        position: absolute;
+        width: 45px;
+        height: 45px;
+        left: 125px;
+        bottom: 125px;
+        z-index: 2;
+        color: var(--primary);
+        cursor: pointer;
+      }
+
+      .timeline-body {
+        width: 50%;
+        margin-left: 25px;
+        color: var(--black);
+
+        .timeline-title {
+          margin-bottom: 1.4rem;
+        }
+
+        p {
+          margin-top: 5px;
+        }
+      }
+    }
   }
 }

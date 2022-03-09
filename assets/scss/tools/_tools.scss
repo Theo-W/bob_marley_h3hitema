@@ -2,6 +2,20 @@
    text-align: justify;
  }
 
+ .text-center {
+   text-align: center;
+ }
+
+ .text-end {
+   text-align: end;
+ }
+
+ .space-text-height {
+   p {
+     padding: 2px 0
+   }
+ }
+
  .w75 {
    width: 75%;
  }

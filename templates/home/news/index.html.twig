@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello HomeController!{% endblock %}
+{% block title %}Actualité{% endblock %}
 
 {% block body %}
 <h1 class="h1">News</h1>
@@ -12,9 +12,9 @@
                     <h2 class="card-title">{{ new.title }}</h2>
                     <p>{{ new.description | raw }}</p>
                 </div>
-                <div class="card-footer">
+                <div class="card-footer justify-content-between">
                     <a href="{{ path('news.show', {'id': new.id }) }}" class="btn-primary">Voir</a>
-                    {{ new.createdAt | date('m/d/Y') }}
+                    <p>Créer le: {{ new.createdAt | date('m/d/Y') }}</p>
                 </div>
             </div>
         {% endfor %}

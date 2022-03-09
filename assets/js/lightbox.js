@@ -1,9 +1,8 @@
 window.onload = () => {
     const modale = document.querySelector("#modal-image")
     const close = document.querySelector(".close")
-    const links = document.querySelectorAll(".galerie div a")
+    const links = document.querySelectorAll(".galerie a")
 
-    //on ajout l'ecouteur clique sur les liens
     for(let link of links) {
         link.addEventListener("click", function(e){
             e.preventDefault()
