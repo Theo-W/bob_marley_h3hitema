@@ -42,14 +42,13 @@
             {% endfor %}
         {% else %}
             <th colspan="6">
-                <p class="p3">Il n'y a pas d'image</p>
+                <p class="p3">Il n'y a pas d'images</p>
             </th>
         {% endif %}
         </tbody>
     </table>
 
-    <div>
-        {% do images.setPageRange(2) %}
-        {{ knp_pagination_render(images, 'components/pagination.html.twig') }}
+    <div class="pagination">
+        {{ knp_pagination_render(images) }}
     </div>
 {% endblock %}
