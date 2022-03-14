@@ -7,13 +7,15 @@
 .container-nav {
   @extend %container;
   margin-top: 1em;
+  padding-bottom: 15px;
+  border-bottom: 1.5px solid var(--border);
 }
 
 body{
   font-family: "Gill Sans", sans-serif;
   font-size: 16px;
   color: var(--black);
-  background-color: var(--gray);
+  background-color: var(--background);
 }
 
 .ck-editor {

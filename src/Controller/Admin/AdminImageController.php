@@ -31,10 +31,14 @@ class AdminImageController extends AbstractController
     }
 
     #[Route('/', name: 'index')]
-    public function index(): Response
+    public function index(Request $request): Response
     {
-        $query = $this->imagesRepository->findAll();
-        $paginator = $this->paginator->paginate($query, 1, 5);
+        $data = $this->imagesRepository->findAll();
+        $paginator = $this->paginator->paginate(
+            $data,
+            $request->query->getInt('page', 1),
+            10
+        );
 
         return $this->render('admin/image/index.html.twig', [
             'images' => $paginator,
