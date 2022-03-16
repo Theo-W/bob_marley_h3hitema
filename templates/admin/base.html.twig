@@ -5,10 +5,11 @@
     <title>{% block title %}Welcome!{% endblock %}</title>
     <link rel="icon" href="/img/logo.png">
     {% block stylesheets %}
+        {{ encore_entry_link_tags('app') }}
     {% endblock %}
 
     {% block javascripts %}
-        {{ vite_asset('main.jsx', ['react']) }}
+        {{ encore_entry_script_tags('app') }}
     {% endblock %}
 </head>
 <body>
