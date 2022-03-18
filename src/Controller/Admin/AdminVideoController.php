@@ -53,12 +53,6 @@ class AdminVideoController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-            $dateVideo = $form->get('video')->getData();
-            if ($dateVideo) {
-                $fileVideo = $this->fileService->upload($dateVideo, $this->uploadDirectory);
-                $video->setVideo($fileVideo);
-            }
-
             $this->em->persist($video);
             $this->em->flush();
 
@@ -79,12 +73,6 @@ class AdminVideoController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-            $dateVideo = $form->get('video')->getData();
-            if ($dateVideo) {
-                $fileVideo = $this->fileService->upload($dateVideo, $this->uploadDirectory);
-                $video->setVideo($fileVideo);
-            }
-
             $this->em->persist($video);
             $this->em->flush();
 
@@ -109,23 +97,5 @@ class AdminVideoController extends AbstractController
         }
 
         return $this->redirectToRoute('admin.video.index');
-    }
-
-    #[Route('/delete/video/{id}', name: 'delete.video')]
-    public function deleteImage(int $id)
-    {
-        $videofind = $this->videoRepository->find($id);
-
-        $image = $videofind->getVideo();
-        $this->fileService->delete($image, $this->uploadDirectory);
-
-        $videofind->setVideo(null);
-        $this->em->flush();
-
-        $this->alert->success('votre image à bien été supprimer');
-
-        return $this->redirectToRoute('admin.video.edit', [
-            'id' => $videofind->getId(),
-        ]);
     }
 }

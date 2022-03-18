@@ -1,8 +1,8 @@
 doctrine:
     dbal:
-        default_connection: gite
+        default_connection: default
         connections:
-            gite:
+            default:
                 driver: '%env(resolve:DB_CONNECTION)%'
                 host: '%env(resolve:DB_HOST)%'
                 port: '%env(resolve:DB_PORT)%'
